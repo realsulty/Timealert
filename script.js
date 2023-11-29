@@ -1,1 +1,0 @@
-alert('Your time is up');
