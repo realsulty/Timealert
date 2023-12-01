@@ -1,3 +1,8 @@
 body {
   background-color: rgb(196, 103, 103);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: rgb(229, 240, 8);
+  font-family: "Arial", sans-serif;
 }/*# sourceMappingURL=style.css.map */

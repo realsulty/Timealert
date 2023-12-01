@@ -34,3 +34,6 @@ switch (true) {
     break;
  
 }
+
+
+// Ternary operator will be used very ofter
