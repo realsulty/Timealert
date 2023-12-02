@@ -167,3 +167,65 @@ for (let i = 0; i<items.length; i++){
 for ( const item of items){ // here the item is a name you introduced 
     console.log(item);
 }
+
+// Loop over maps
+const map = new Map();
+map.set('name', 'john');
+map.set('age', 30);
+
+for ( const [key, value]of map) {
+    console.log(key, value);
+}
+
+// For Each loop
+
+// const socials = ['X', 'LinkedIn', 'Facebook', 'Instagram'];
+
+// socials.forEach((item) => console.log(item)); 
+
+// // Filter
+
+// const numbers =[1,2,3,4,5,6,7,8,9,10,11,12];
+
+// // const evenNumbers = numbers.filter(function(number){
+// // return number % 2 === 0;
+
+// // });
+// // Shirt version 
+// const evenNumbers = numbers.filter(number => number %2 === 0);
+// console.log(evenNumbers);
+
+const companies = [
+    {name:'company one', catagorey:'Finance',start:1981, end:2004},
+    {name:'company Two', catagorey:'Retail',start:1992, end:2008},
+    {name:'company three', catagorey:'Auto',start:1999, end:2007},
+    {name:'company Four', catagorey:'Retail',start:1989, end:2010},
+    {name:'company Five', catagorey:'Technology',start:2009, end:2014},
+    {name:'company Six', catagorey:'Finance',start:1987, end:2010},
+    {name:'company Seven', catagorey:'Auto',start:1986, end:1996},
+    {name:'company eight', catagorey:'Technology',start:2011, end:2016},
+    {name:'company Nine', catagorey:'Retail',start:1981, end:1989},
+];
+// Get Retail companies only using filter or map
+ const retailCompanies = companies.filter((company) => company.catagorey === 'Retail');
+ console.log(retailCompanies);
+
+
+
+ // Get companies that started in or after 1980 and ended in or before 2005 
+ const earlyCompanies = companies.filter(
+    (company) =>company.start >= 1980 && company.end <= 2005 
+    );
+
+    console.log(earlyCompanies);
+
+    const longCompanies = companies.filter(
+        (company) => company.end - company.start >= 10 
+        );
+
+        console.log(longCompanies);
+
+        // Using Map 
+        const numbers = [1,2,3,4,5];
+        const doubleNumbers = numbers.map ((number) => number * 2 );
+        console.log(doubleNumbers);
