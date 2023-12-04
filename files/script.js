@@ -224,8 +224,22 @@ const companies = [
         );
 
         console.log(longCompanies);
+// Using map
+
+const companyNames = companies.map ((company) => company.name);
+// console.log(companyNames);
+
+// calling two infos from the company object 
+const companyInfo = companies.map ((company) => {
+    return {
+        name: company.name,
+        catagorey: company.catagorey,
+    };
+});
+console.log(companyInfo);
 
         // Using Map 
         const numbers = [1,2,3,4,5];
         const doubleNumbers = numbers.map ((number) => number * 2 );
         console.log(doubleNumbers);
+
