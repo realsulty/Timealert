@@ -238,8 +238,154 @@ const companyInfo = companies.map ((company) => {
 });
 console.log(companyInfo);
 
-        // Using Map 
-        const numbers = [1,2,3,4,5];
-        const doubleNumbers = numbers.map ((number) => number * 2 );
-        console.log(doubleNumbers);
+//         // Using Map 
+//         const numbers = [1,2,3,4,5];
+//         const doubleNumbers = numbers.map ((number) => number * 2 );
+//         console.log(doubleNumbers);
 
+// // chain map methods
+// const squareAndDouble = numbers
+//     .map((number) => Math.sqrt(number)) // get rid of the semi colon and next line is the 2nd map
+//     .map((sqrt) => sqrt *2); // This is the second line were ypu can insert a second map
+//     console.log(squareAndDouble);
+
+//     // chaining different methods
+//     const evenDouble = numbers
+//         .filter((number) => number % 2 === 0)
+//         .map((number) => number * 2);
+
+//         console.log(evenDouble);
+
+// // This is reduce wrtitten by function syntax
+
+//         const sum = numbers.reduce(function (previousValue, currentValue) {
+
+//             return previousValue + currentValue;
+//         },0); // This is setting up the initial Value
+
+// // This is Reduce() with Arrow function
+
+// const sum2 = numbers.reduce((acc, cur) => acc + cur, 0);
+
+// // This is using for loop
+// const sum3 = () => {
+//     let acc = 0 ; // setting initial Value
+//     for ( const cur of numbers){
+//         acc += cur;
+//     }
+//     return acc; // On For Loop always return outside the foor lop bracket function
+
+// }
+
+//         console.log(sum3());
+
+const cart = [
+
+    { id:1, name:'Product 1', price: 130},
+    { id:2, name:'Product 2', price: 150},
+    { id:3, name:'Product 3', price: 200},
+];
+
+// const total = cart.reduce(function (acc, Product){
+//     return acc + Product.price;
+// }, 0); 
+
+const total = cart.reduce((acc, product) => acc + product.price, 0);
+console.log(total);
+
+const people = [
+    {
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'john@gmail.com',
+        phone : '111-2222-3333-444',
+        age : 30,
+
+    },
+    {
+        firstName: 'Billy',
+        lastName: 'Doe',
+        email: 'john@gmail.com',
+        phone : '111-2222-3333-444',
+        age : 25,
+
+    },
+    {
+        firstName: 'Marcy',
+        lastName: 'Doe',
+        email: 'john@gmail.com',
+        phone : '111-2222-3333-444',
+        age : 45,
+
+    },
+    {
+        firstName: 'Bob',
+        lastName: 'darn',
+        email: 'john@gmail.com',
+        phone : '111-2222-3333-444',
+        age : 19,
+
+    },
+    {
+        firstName: 'Sara',
+        lastName: 'Doly',
+        email: 'john@gmail.com',
+        phone : '111-2222-3333-444',
+        age : 23,
+
+    },
+];
+
+// Challenge 11
+// const youngPeople = people
+//     .filter((person) => person.age <= 25 )
+//     .map((person) => ({
+//     name : person.firstName + ' ' + person.lastName,
+//     email: person.email
+
+//     }));
+
+// console.log(youngPeople);
+
+
+
+// // Challenge 14
+
+// const numbers = [ 2, -30, 50, 20, -12, -9, 7];
+// const postiveSum = numbers
+//     .filter((number) => number > 0 )
+//     .reduce((acc, cur) => acc + cur, 0);
+
+//     console.log(postiveSum);
+
+
+// // Challenge 15
+// const words = ['coder', 'programmer', 'developer'];
+
+// const cWords = words.map((word) =>  word[0].toUpperCase() + word.slice(1, word.length));
+// console.log(cWords);
+
+
+
+let intervalID;
+
+function startChange() {
+    if (!intervalID) {
+        intervalID = setInterval(changeRandomColor, 1000);
+    }
+}
+
+function changeRandomColor() {
+    const randomColor = Math.floor(Math.random() * 1677725).toString(16);
+    document.body.style.backgroundColor = `#${randomColor}`;
+    console.log(`${randomColor}`);
+}
+
+function stopChange() {
+    clearInterval(intervalID);
+    console.log('Abort')
+    return;
+}
+// add Event Listenres 
+document.getElementById('start').addEventListener('click', startChange);
+document.getElementById('stop').addEventListener('click', stopChange);
